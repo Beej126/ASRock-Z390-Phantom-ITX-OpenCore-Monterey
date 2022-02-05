@@ -1,10 +1,10 @@
 # ASRock-Z390-Phantom-ITX-OpenCore-Monterey
 Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 
-# OS Version
+## OS Version
 - Montery 12.2
 
-# OpenCore Version
+## OpenCore Version
 - 0.7.7
 
 ## Hardware
@@ -22,7 +22,7 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 | Cooler | [Corsair H80i v2 - 120mm rad x 2 fans](https://www.corsair.com/us/en/Categories/Products/Liquid-Cooling/Single-Radiator-Liquid-Coolers/Hydro-Series%E2%84%A2-H80i-v2-High-Performance-Liquid-CPU-Cooler/p/CW-9060024-WW) | |
 | Monitor | [Samsung UN55NU7300 *CURVED* 55" 4K TV ](https://www.samsung.com/ca/support/model/UN55NU7300FXZC/) | motherboard hdmi |
 
-# config.plist highlights
+## config.plist highlights
 - boot-args - e.g. verbose is enabled vs seeing clean mac logo and progress bar
 - main iGPU platform-id
 - drivers
@@ -30,19 +30,23 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 - boot menu "picker" settings
 - boot menu tools - handy to have clear/reset nvram, toggle sip and open efi shell
 
-# OpenCore guide for desktop Coffee Lake
+## OpenCore guide for desktop Coffee Lake
 - https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#starting-point
+- make sure you really [enable/disable all the appropriate bios settings!!](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#intel-bios-settings)
 
-# Notes / Tips
+## Notes / Tips
 - This EFI is iGPU only (i.e. no discrete graphics card settings) which was something i couldn't readily find elsewhere but otherwise this is largely copied from these other EFI bundles i found:
   - [SeanZhang98](https://github.com/seanzhang98/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh-Monterey/blob/main/README_en.md)
   - [FangF2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh/tree/master/EFI/OC)
   - [BoBo88](https://www.tonymacx86.com/threads/asrock-z390-phantom-gaming-itx-i7-8700k-rx-570-pulse-itx-opencore-0-6-8-bigsur-11-3-windows-10.312078/)
   - [AnsonLiao](https://github.com/ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX)
-- i had working hackmac already (Catalina on Clover), so preferred to download Monterey from Apple Store and install to another drive versus creating usb boot... the initial install is of course nice and cozy this way but the fun is whether the install can continue running on your EFI loader upon boot... i was freezing on apple logo progress bar a lot till i banged around on opencore configs... classic case of not sure which change really made the difference but i think AnsonLiao's EFI bundle was the closest out of the box.
-- make sure you definitely do all the stuff the [opencore guide says for enabling/disabling bios settings!!](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#intel-bios-settings)
+- i had working hackmac already (Catalina on Clover), so preferred to download Monterey from Apple Store and install to another drive versus creating usb boot... the initial install is of course nice and cozy this way but the fun is whether the install runs on your EFI upon boot... mine was freezing on apple logo progress bar a lot till i banged around on opencore configs... classic case of not sure which change really made the difference but i think AnsonLiao's EFI bundle was the closest out of the box.
+- ### EFI partition is a handy go between, make it big!
+  - macOs defaults it to 200MB which can fill up fast if you use it keeping things around between multiple OS's and versions... it's hard to find any real concrete recommendations on maximum size... i found [one guy saying 950MB is ok](https://www.ujmix.com/how-to-increase-efi-partition-mac/)
+  - a good time to do this is PRIOR TO INSTALLING macOS!! after AFPS partition is created you need other tools and it's more risky
+  - if you're installing from a pre-existing mac, Diskutil > erase your new destination drive as GUID + APFS... then go edit the EFI to be larger with something like free [Paragon CampTune](https://www.paragon-software.com/us/home/camptune/)... THEN go ahead and install the new macOS to this drive and it will honor the existing EFI partition size (i tested it =)
 
-# Tools
+## Tools
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)
 - [ProperTree](https://github.com/corpnewt/ProperTree) - the safest way to edit config.plist for opencore
 - [Mackie's OpenCore Configurator v2.56.00](https://mackie100projects.altervista.org/download-opencore-configurator/) - OpenCore's docs specifically say to avoid due to creating invalid entries but it worked for me
