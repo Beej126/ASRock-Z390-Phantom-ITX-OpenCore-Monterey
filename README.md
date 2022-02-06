@@ -17,7 +17,7 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 | Memory | [Corsair Dominator Platinum DDR4 3200 2 x 16GB (CMD32GX4M2C3200C16)](https://www.corsair.com/us/en/Categories/Products/Memory/DOMINATOR®-PLATINUM-32GB-%282-x-16GB%29-DDR4-DRAM-3200MHz-C16-Memory-Kit/p/CMD32GX4M2C3200C16) | |
 | SSD | [Samsung 970 Pro NVMe m.2 SSD 512GB](https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-pro-nvme-m2-512gb-mz-v7p512bw/) | |
 | WiFi/Bluetooth Module | Broadcom [BCM4360](https://www.broadcom.com/products/wireless/wireless-lan-infrastructure/bcm4360) / [BCM2046](https://devicehunt.com/view/type/usb/vendor/0A5C/device/4500) | |
-| Case | [Old School Cyang Fun "gBox" SFF with handle 💖](https://beej126.github.io/gBox-resurrected/) | |
+| Case | [Old School Chyang Fun "gBox" SFF with handle 💖](https://beej126.github.io/gBox-resurrected/) | |
 | PSU | [Corsair SF600 SFX - 600watt](https://www.corsair.com/us/en/Categories/Products/Power-Supply-Units/Power-Supply-Units-Advanced/SF-Series/p/CP-9020182-NA) | |
 | Cooler | [Corsair H80i v2 - 120mm rad x 2 fans](https://www.corsair.com/us/en/Categories/Products/Liquid-Cooling/Single-Radiator-Liquid-Coolers/Hydro-Series%E2%84%A2-H80i-v2-High-Performance-Liquid-CPU-Cooler/p/CW-9060024-WW) | |
 | Monitor | [Samsung UN55NU7300 *CURVED* 55" 4K TV ](https://www.samsung.com/ca/support/model/UN55NU7300FXZC/) | motherboard hdmi |
