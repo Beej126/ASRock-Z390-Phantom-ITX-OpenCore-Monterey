@@ -22,17 +22,19 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 | Cooler | [Corsair H80i v2 - 120mm rad x 2 fans](https://www.corsair.com/us/en/Categories/Products/Liquid-Cooling/Single-Radiator-Liquid-Coolers/Hydro-Series%E2%84%A2-H80i-v2-High-Performance-Liquid-CPU-Cooler/p/CW-9060024-WW) | |
 | Monitor | [Samsung UN55NU7300 *CURVED* 55" 4K TV ](https://www.samsung.com/ca/support/model/UN55NU7300FXZC/) | motherboard hdmi |
 
-## config.plist highlights
-- boot-args - e.g. verbose is enabled vs seeing clean mac logo and progress bar
-- main iGPU platform-id
-- drivers
-- kexts
-- boot menu "picker" settings
-- boot menu tools - handy to have clear/reset nvram, toggle sip and open efi shell
-
 ## OpenCore guide for desktop Coffee Lake
 - https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#starting-point
-- make sure you really [enable/disable all the appropriate bios settings!!](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#intel-bios-settings)
+- make sure you really [enable/disable all the appropriate BIOS settings!!](https://dortania.github.io/OpenCore-Install-Guide/config.plist/coffee-lake.html#intel-bios-settings), but fortunately these two things were NOT necessary for me:
+  - Intel Platform Trust (i.e. TPM) can remain enabled - recently more important for running Windows 11
+  - CSM (Compatibility Support Module) can also remain enabled - my rig would POST 5 beeps and never initialize the hdmi to my 4k tv when i disabled CSM
+
+## config.plist highlights
+- [boot-args](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L842) - e.g. "-v" verbose is enabled vs seeing clean mac logo and progress bar
+- [iGPU ig-platform-d](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L196) - this is saved in base64, "AwCYPg==" corresponds to hex "0300983e" (fyi, here's a [gist for the unix commands to convert back and forth](https://gist.github.com/Beej126/ab511b7100eb348a5c61616867b74593))... everybody has this versus what's in the opencore guide, here is [some detail on it](https://www.tonymacx86.com/threads/smbios-19-x-imacs-2019.274686/page-43#post-1956333)
+- [drivers](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L1009)
+- [kexts](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L219)
+- [boot menu "picker" settings](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L676)
+- [boot menu tools](https://github.com/Beej126/ASRock-Z390-Phantom-ITX-OpenCore-Monterey/blob/e5575af11051487d72d2012e714e696d6d39c9fc/EFI/OC/config.plist#L706) - handy to have clear/reset nvram, toggle sip and open efi shell
 
 ## Notes / Tips
 - This EFI is iGPU only (i.e. no discrete graphics card settings) which was something i couldn't readily find elsewhere but otherwise this is largely copied from these other EFI bundles i found: [SeanZhang98](https://github.com/seanzhang98/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh-Monterey/blob/main/README_en.md), [FangF2018](https://github.com/fangf2018/ASRock-Z390-Phantom-ITX-OpenCore-Hackintosh/tree/master/EFI/OC), [BoBo88](https://www.tonymacx86.com/threads/asrock-z390-phantom-gaming-itx-i7-8700k-rx-570-pulse-itx-opencore-0-6-8-bigsur-11-3-windows-10.312078/), [AnsonLiao](https://github.com/ansonliao/EFI-ASRock-Z390-Phantom-Gaming-ITX)
