@@ -54,6 +54,7 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 ## Tools
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)
 - [ProperTree](https://github.com/corpnewt/ProperTree) - the safest way to edit config.plist for opencore
-- [Mackie's OpenCore Configurator v2.56.00](https://mackie100projects.altervista.org/download-opencore-configurator/) - worked fine for me but OpenCore's docs specifically do specifically say to avoid
+- [Mackie's OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) - worked fine for me but OpenCore's docs specifically do specifically say to avoid
 - [Hackintool](https://github.com/headkaze/Hackintool/releases/) - good for viewing exact deviceId's and tons of other settings
 - [XtraFinder](https://www.trankynam.com/xtrafinder/) - F2 to rename and DEL to delete 💖, dual tab finders side by side
+- [Paragon Hard Disk Manager](https://www.paragon-software.com/us/hdm-mac/)
