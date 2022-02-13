@@ -44,9 +44,12 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
   - macOs format tools default EFI partition to 200MB which can fill up fast if you use it to keep things around between multiple OS's and versions... it's hard to find any real concrete recommendations on maximum size... [here's one saying 950MB is ok](https://www.ujmix.com/how-to-increase-efi-partition-mac/)
   - the best time to do this is PRIOR TO INSTALLING macOS!! after the AFPS partition is created it's non trivial (maybe impossible) to move.
   - contemporary versions of macOs Disk Utility hide the EFI from direct manipulation ... one trick is to erase the disk to get the stock GDI layout with standard 210MB EFI and then carve out another little partition for the EFI to expand into later... this way we get a clean EFI that the macOs installer will proceed with and we have room to create our preferred EFI partition after the installer is done.  I named this partition EFI2 with size of 740MB (i.e. 210 default + 740 = 950 total).
-   <img src="https://user-images.githubusercontent.com/6301228/152660575-cfb854bd-dfbc-486b-a3f7-5422cb274b1f.png" width="600px"/>
-   <img src="https://user-images.githubusercontent.com/6301228/152660998-836bed5c-8f4c-4b4d-8738-2d40567415a3.png" width="600px"/>
-   <img src="https://user-images.githubusercontent.com/6301228/152661042-e74e0b68-38d7-4946-b1fe-ef046a51692a.png" width="600px"/>
+    <img src="https://user-images.githubusercontent.com/6301228/152660575-cfb854bd-dfbc-486b-a3f7-5422cb274b1f.png" width="600px"/>
+    <img src="https://user-images.githubusercontent.com/6301228/152660998-836bed5c-8f4c-4b4d-8738-2d40567415a3.png" width="600px"/>
+    <img src="https://user-images.githubusercontent.com/6301228/152661042-e74e0b68-38d7-4946-b1fe-ef046a51692a.png" width="600px"/>
+   
+  - another little EFI Tip - when you're in the middle of a lot of EFI changes, to config.plist, etc, save yourself the trouble of having to re-mount the EFI partition after every reboot...  one way i stumbled into achieving this is by using a partition tool (e.g. [Paragon's](https://www.paragon-software.com/us/hdm-mac/)) to change the partition type to something other than standard EFI, e.g. "Microsoft Basic Data Partition"... it will still boot fine and since it's not recognized as EFI, macOS will conveniently mount it by default.
+    <img src="https://user-images.githubusercontent.com/6301228/153739236-50592318-4cee-4326-8574-0fcbe6e48d4c.png" width="600px"/>
 
 ## Tools
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)
