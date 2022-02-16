@@ -1,15 +1,11 @@
 # ASRock-Z390-Phantom-ITX-OpenCore-Monterey
 Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 
-## OS Version
-- Montery 12.2
-
-## OpenCore Version
-- 0.7.7
-
-## Hardware
-| Item | Model | Notes |
+## Specs
+| Thing | Version/Model | Notes |
 | --- | --- | --- |
+| Latest macOS loaded | Monterey 12.2.1 | |
+| OpenCore | 0.7.7 | |
 | Motherboard | [Asrock Z390 Phantom Gaming ITX/AC](https://www.asrock.com/MB/Intel/Z390%20Phantom%20Gaming-ITXac/index.asp) | |
 | BIOS Version | [4.40](https://www.asrock.com/MB/Intel/Z390%20Phantom%20Gaming-ITXac/index.asp#BIOS) | (not attempting 4.40c thunderbolt bios just yet) |
 | CPU | [Intel i9-9900K (Coffee Lake)](https://ark.intel.com/content/www/us/en/ark/products/186605/intel-core-i99900k-processor-16m-cache-up-to-5-00-ghz.html) | |
