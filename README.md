@@ -38,7 +38,7 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 - i had working hackmac already (Catalina on Clover), so preferred to download Monterey from Apple Store and install to another drive versus creating usb boot... the initial install is of course nice and cozy this way but the fun is whether the install runs on your EFI upon boot... mine was freezing on apple logo progress bar a lot till i banged around on opencore configs... classic case of not sure which change really made the difference but i think AnsonLiao's EFI bundle was the closest out of the box.
 - ### EFI partition is a handy go between, make it big!
   - macOs format tools default EFI partition to ~210MB which can fill up fast if you use it to keep things around between multiple OS's and versions... it's hard to find any real concrete recommendations on maximum size... [here's one saying 950MB is ok](https://www.ujmix.com/how-to-increase-efi-partition-mac/)
-  - the best time to do this is PRIOR TO INSTALLING macOS!! after the AFPS partition is created it's non trivial (maybe impossible) to move.
+  - the best time to do this is PRIOR TO INSTALLING macOS!! after the AFPS partition is created, it's non trivial to move (maybe impossible).
   - contemporary versions of macOs Disk Utility hide the EFI from direct manipulation ... one trick is to first erase the disk as usual, to get the stock GDI layout with standard 210MB EFI and then carve out another ADDITIONAL partition for the EFI **to expand into later**... this way we get a clean EFI that the macOs installer will proceed with and we have also left room to expand our preferred EFI final partition into after the installer is done.  I named this partition EFI2 with size of 740MB (i.e. 210 default + 740 = 950 total).
     <img src="https://user-images.githubusercontent.com/6301228/152660575-cfb854bd-dfbc-486b-a3f7-5422cb274b1f.png" width="600px"/>
     <img src="https://user-images.githubusercontent.com/6301228/152660998-836bed5c-8f4c-4b4d-8738-2d40567415a3.png" width="600px"/>
@@ -50,7 +50,7 @@ Working settings for OpenCore Monterey on ASRock Z390 Phantom Gaming ITX
 ## Tools
 - [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)
 - [ProperTree](https://github.com/corpnewt/ProperTree) - the safest way to edit config.plist for opencore
-- [Mackie's OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) - worked fine for me but OpenCore's docs specifically do specifically say to avoid
+- [Mackie's OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) - worked fine for me but OpenCore's docs specifically say to avoid
 - [Hackintool](https://github.com/headkaze/Hackintool/releases/) - good for viewing exact deviceId's and tons of other settings
 - [XtraFinder](https://www.trankynam.com/xtrafinder/) - F2 to rename and DEL to delete 💖, dual tab finders side by side
 - [Paragon Hard Disk Manager](https://www.paragon-software.com/us/hdm-mac/)
